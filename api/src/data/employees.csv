@@ -1,0 +1,6 @@
+id,first_name,last_name,email,department,title
+1,Alice,Smith,alice@example.com,Engineering,Software Engineer
+2,Bob,Johnson,bob@example.com,Marketing,Content Strategist
+3,Charlie,Lee,charlie@example.com,Engineering,DevOps Engineer
+4,Dana,Wu,dana@example.com,Sales,Account Executive
+5,Eli,Zhang,eli@example.com,HR,People Operations
