@@ -46,6 +46,21 @@ Upon navigating to the client, you will see the table displayed listing all empl
 
 You have the ability to sort all columns ascending and descending, search and filter results by title and department
 
-To review the results from the api, you can navigate to http://localhost:9000/employee
+To review the results from the employees api endpoint, you can navigate to http://localhost:9000/api/employees
+
+For optional querying you can add as many of the following paramaters as you like:
+
+first_name
+
+last_name
+
+email
+
+title
+
+department
+
+ex) http://localhost:9000/api/employees?department=engineering&first_name=alice
+
 
 

@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors(corsOptions));
 
 // Routes
-app.use("/employee", EmmployeeRouter);
+app.use("/api/employees", EmmployeeRouter);
 
 app.use(errorHandler);
 // Global error handler (should be after routes)

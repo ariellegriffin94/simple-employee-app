@@ -18,6 +18,14 @@ interface IEmployee {
   title: string;
 }
 
+export interface IEmployeeQuery{
+  first_name?: string;
+  last_name?:string;
+  email?: string;
+  department?:string;
+  title?:string;
+}
+
 interface APIError {
   message: string;
 }
@@ -28,7 +36,7 @@ interface APIResponse {
 }
 
 class EmployeeService {
-  public async getEmployees(): Promise<APIResponse> {
+  public async getEmployees(query?:IEmployeeQuery): Promise<APIResponse> {
     let status: number = 500;
     let data: IEmployee[] | APIError = [];
     let errorMessage: string = "";
@@ -52,7 +60,19 @@ class EmployeeService {
           department,
           title,
         };
-      });
+      }).filter((employee)=>{
+
+        const departmentQueried=query?.department?.toLowerCase() ?? ""
+        const titleQueried=query?.title?.toLowerCase() ?? ""
+        const firstNameQueried=query?.first_name?.toLowerCase() ?? ""
+       const lastNameQueried=query?.last_name?.toLowerCase() ?? ""
+       const emailQueried=query?.email?.toLowerCase() ?? ""
+        return employee.department.toLowerCase().includes(departmentQueried) && 
+        employee.title.toLowerCase().includes(titleQueried) && 
+        employee.firstName.toLowerCase().includes(firstNameQueried) && 
+        employee.lastName.toLowerCase().includes(lastNameQueried) && 
+        employee.email.toLowerCase().includes(emailQueried)
+      })
     } catch (err: any) {
       console.log(err);
       status = 500;

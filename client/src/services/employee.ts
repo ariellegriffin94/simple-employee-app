@@ -20,7 +20,7 @@ const getEmployees = async (): Promise<ServiceResponse<IEmployee[]>> => {
 
   try {
     const response = await axios.get<IEmployee[]>(
-      "http://localhost:9000/employee",
+      "http://localhost:9000/api/employees",
     );
     isSuccessful = true;
     data = response.data;
