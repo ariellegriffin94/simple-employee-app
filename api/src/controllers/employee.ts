@@ -11,7 +11,6 @@ class EmployeeController {
   }
 
   public async getEmployees(_req: Request, res: Response): Promise<void> {
-    console.log("hello");
     const getEmployeesRes = await this.employeeService.getEmployees();
     const { status, data } = getEmployeesRes;
     res.status(status).json(data);
